@@ -25,7 +25,7 @@ video.addEventListener("play", () => {
   function step() {
     canvas.height = window.innerHeight;
     aspectRatio = 4 / 3;
-    canvas.width = canvas.height / aspectRatio;
+    canvas.width = canvas.height / aspectRatio - 20;
     ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
     id = id + 1;
     if (id <= 60) {

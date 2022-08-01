@@ -1,8 +1,8 @@
 (function createVideoElement() {
   const constraints = (window.constraints = {
     audio: false,
-    video: { facingMode: "user" },
-    // video: { facingMode: { exact: "environment" } },
+    // video: { facingMode: "user" },
+    video: { facingMode: { exact: "environment" } },
   });
   navigator.mediaDevices
     .getUserMedia(constraints)

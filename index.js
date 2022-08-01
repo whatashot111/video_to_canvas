@@ -1,8 +1,8 @@
 (function createVideoElement() {
   const constraints = (window.constraints = {
     audio: false,
-    // video: { facingMode: "user" },
-    video: { facingMode: { exact: "environment" } },
+    video: { facingMode: "user" },
+    // video: { facingMode: { exact: "environment" } },
   });
   navigator.mediaDevices
     .getUserMedia(constraints)
@@ -24,7 +24,8 @@ let id = 0;
 video.addEventListener("play", () => {
   function step() {
     canvas.height = window.innerHeight;
-    canvas.width = window.innerHeight;
+    aspectRatio = video.videoWidth / video.videoHeight;
+    canvas.width = canvas.height / aspectRatio;
     ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
     id = id + 1;
     if (id <= 60) {
